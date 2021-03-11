@@ -5,6 +5,8 @@ The middleware must have below methods:
 
 ```js
 interface BpframeworkMiddleware {
+  /** name of middleware */
+  name: string,
   /** web framework type. e.g. 'koa' **/
   type: string,
   /** call after route */
@@ -20,6 +22,7 @@ Example:
 
 ```js
 export default {
+  name: 'test-middleware',
   type: 'koa',
   initiator(app) {
 
@@ -37,6 +40,7 @@ export default {
 
 ### List
 
-| name     | descs                                          |
-| -------- | ---------------------------------------------- |
-| koa-i18n | https://github.com/bpcloud/middleware-koa-i18n |
+| name           | descs                                                |
+| -------------- | ---------------------------------------------------- |
+| koa-i18n       | https://github.com/bpcloud/middleware-koa-i18n       |
+| koa-bodyparser | https://github.com/bpcloud/middleware-koa-bodyparser |
