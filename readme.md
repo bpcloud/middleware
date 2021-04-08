@@ -44,3 +44,4 @@ export default {
 | -------------- | ---------------------------------------------------- |
 | koa-i18n       | https://github.com/bpcloud/middleware-koa-i18n       |
 | koa-bodyparser | https://github.com/bpcloud/middleware-koa-bodyparser |
+| koa-cors       | https://github.com/bpcloud/middleware-koa-cors       |
