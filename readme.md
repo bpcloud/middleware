@@ -10,11 +10,11 @@ interface BpframeworkMiddleware {
   /** web framework type. e.g. 'koa' **/
   type: string,
   /** call after route */
-  initiator: (app:any)=>void,
+  initiator: (app:any, bpApp:any)=>void,
   /** initiator the middleware */
-  afterRoute: (app:any)=>Promise<boolean>,
+  afterRoute?: (app:any, bpApp:any)=>Promise<boolean>,
   /** call before route */
-  beforeRoute: (app:any)=>Promise<boolean>,
+  beforeRoute?: (app:any, bpApp:any)=>Promise<boolean>,
 }
 ```
 
@@ -24,14 +24,14 @@ Example:
 export default {
   name: 'test-middleware',
   type: 'koa',
-  initiator(app) {
+  initiator(app, bpApp) {
 
   },
-  async beforeRoute(ctx): boolean {
+  async beforeRoute(ctx, bpApp): boolean {
     // To interrupt process of follow-up .
     return false;
   },
-  async afterRoute(ctx): boolean {
+  async afterRoute(ctx, bpApp): boolean {
     // To interrupt process of follow-up.
     return false;
   },
