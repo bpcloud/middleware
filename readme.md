@@ -9,14 +9,18 @@ interface BpframeworkMiddleware {
   name: string,
   /** web framework type. e.g. 'koa' **/
   type: string,
-  /** call after route */
-  initiator: (app:any, bpApp:any)=>void,
   /** initiator the middleware */
-  afterRoute?: (app:any, bpApp:any)=>Promise<boolean>,
+  initiator: (app:any, bpApp:any)=>void,
+  /** The framework context finished, all objects of framework, e.g. FeignClient, start working. */
+  contextFinished?: (app:any, bpApp:any)=>void,
   /** call before route */
   beforeRoute?: (app:any, bpApp:any)=>Promise<boolean>,
+  /** call after route */
+  afterRoute?: (app:any, bpApp:any)=>Promise<boolean>,
 }
 ```
+
+`initiator` -> `contextFinished` -> `beforeRoute` -> `afterRoute`
 
 Example:
 
