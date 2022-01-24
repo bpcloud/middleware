@@ -50,4 +50,6 @@ export default {
 | koa-bodyparser | https://github.com/bpcloud/middleware-koa-bodyparser |
 | koa-cors       | https://github.com/bpcloud/middleware-koa-cors       |
 | redis          | https://github.com/bpcloud/middleware-redis          |
+| database       | https://github.com/bpcloud/middleware-db             |
+| logger         | https://github.com/bpcloud/middleware-log4js         |
 
