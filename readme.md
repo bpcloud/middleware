@@ -14,7 +14,7 @@ interface BpframeworkMiddleware {
   /** The framework context finished, all objects of framework, e.g. FeignClient, start working. */
   contextFinished?: (app:any, bpApp:any)=>void,
   /** call before route */
-  beforeRoute?: (app:any, bpApp:any)=>Promise<boolean>,
+  beforeRoute?: (app:any, bpApp:any, request?:any)=>Promise<boolean>,
   /** call after route */
   afterRoute?: (app:any, bpApp:any)=>Promise<boolean>,
 }
@@ -31,7 +31,7 @@ export default {
   initiator(app, bpApp) {
 
   },
-  async beforeRoute(ctx, bpApp): boolean {
+  async beforeRoute(ctx, bpApp, request): boolean {
     // To interrupt process of follow-up .
     return false;
   },
@@ -49,5 +49,6 @@ export default {
 | koa-i18n       | https://github.com/bpcloud/middleware-koa-i18n       |
 | koa-bodyparser | https://github.com/bpcloud/middleware-koa-bodyparser |
 | koa-cors       | https://github.com/bpcloud/middleware-koa-cors       |
+| koa-session    | https://github.com/bpcloud/middleware-koa-session    |
 | redis          | https://github.com/bpcloud/middleware-redis          |
 
